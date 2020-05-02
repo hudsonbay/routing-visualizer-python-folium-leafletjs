@@ -38,8 +38,8 @@ def get_orders(json_data):
             lista_products.append(product)
 
         # parsing orderes into objects
-        sequence = Order.Order(order['id'], order['fecha'],
-                               order['duracion'], destiny, origin, lista_products)
+        sequence = Order.Order(order['id'], order['date'],
+                               order['time_elapsed'], destiny, origin, lista_products)
         lista_orderes.append(sequence)
 
     return lista_orderes
@@ -74,7 +74,7 @@ def get_routes(json_data):
         origin = Origin.Origin(k['id'], k['description'], k['direccion'],
                                k['latitude'], k['longitude'], k['desde'], k['hasta'])
 
-        route = Ruta.Ruta(ruta['id'], ruta['inicio'], ruta['fin'], ruta['duracion'], ruta['hrsExtras'],
+        route = Ruta.Ruta(ruta['id'], ruta['inicio'], ruta['fin'], ruta['time_elapsed'], ruta['hrsExtras'],
                           ruta['nivelServicio'], ruta['vehiculo'], ruta['entregas'], lista_paradas, ruta['km'], origin, ruta['porTransito'], ruta['porAtencion'], ruta['porEspera'], ruta['porLlenado'], ruta['porLlenadoUnidades'], ruta['porLlenadoVolumen'], ruta['porLlenadoPeso'], ruta['cantidad'], ruta['volumen'], ruta['peso'])
         routes_list.append(route)
 

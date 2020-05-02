@@ -1,11 +1,11 @@
 class Ruta:
 
     # Initializer / Instance Attributes
-    def __init__(self, id, inicio, fin, duracion, hrsExtras, nivelServicio, vehiculo, entregas, listaParadas, km, origin, porTransito, porAtencion, porEspera, porLlenado, porLlenadoUnidades, porLlenadoVolumen, porLlenadoPeso, cantidad, volumen, peso):
+    def __init__(self, id, inicio, fin, time_elapsed, hrsExtras, nivelServicio, vehiculo, entregas, listaParadas, km, origin, porTransito, porAtencion, porEspera, porLlenado, porLlenadoUnidades, porLlenadoVolumen, porLlenadoPeso, cantidad, volumen, peso):
         self.id = id
         self.inicio = inicio
         self.fin = fin
-        self.duracion = duracion
+        self.time_elapsed = time_elapsed
         self.hrsExtras = hrsExtras
         self.nivelServicio = nivelServicio
         self.vehiculo = vehiculo

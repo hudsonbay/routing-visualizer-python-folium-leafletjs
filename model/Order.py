@@ -1,10 +1,10 @@
 class Order:
 
     # Initializer / Instance Attributes
-    def __init__(self, id, fecha, duracion, destiny, origin, listaProducts):
+    def __init__(self, id, date, time_elapsed, destiny, origin, listaProducts):
         self.id = id
-        self.fecha = fecha
-        self.duracion = duracion
+        self.date = date
+        self.time_elapsed = time_elapsed
         self.destiny = destiny
         self.origin = origin
         self.listaProducts = listaProducts
