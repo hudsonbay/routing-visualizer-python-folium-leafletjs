@@ -10,7 +10,7 @@ import json
 from pprint import pprint
 
 # methods to decode the json file
-from json_decoding import get_routes, get_orders
+#from json_decoding import get_routes, get_orders
 
 # for the color of the lines
 import randomcolor
@@ -20,3 +20,5 @@ tooltip = 'This is where it all starts'
 
 # Load JSON
 json_data = json.load(open('example.json'))
+
+pprint(json_data)

@@ -9,6 +9,7 @@ autopep8 = "*"
 [packages]
 folium = "*"
 pprint = "*"
+randomcolor = "*"
 
 [requires]
 python_version = "3.8"

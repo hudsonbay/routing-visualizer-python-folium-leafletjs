@@ -1,4 +1,4 @@
-from model import Cliente, Destino, Origen, Orden, Producto, Ruta, Parada, Entrega
+from model import Client, Destino, Origen, Orden, Producto, Ruta, Parada, Entrega
 
 
 # recibe por lo general esto como parametro: json_data['input']['listaOrdenes']
@@ -21,7 +21,7 @@ def get_orders(json_data):
         lista_productos = []
 
         # parsing clients into objects
-        cliente = Cliente.Cliente(i['id'], i['descripcion'], i['rfc'])
+        cliente = Client.Client(i['id'], i['descripcion'], i['rfc'])
 
         # parsing destinys into objects
         destino = Destino.Destino(j['id'], j['descripcion'], cliente, j['direccion'],
@@ -60,7 +60,7 @@ def get_routes(json_data):
 
             # getting all deliveries from every stop
             for entrega in parada['listaEntregas']:
-                delivery = Entrega.Entrega(entrega['id'], entrega['descripcion'], entrega['secuencia'], entrega['direccion'], entrega['idCliente'], entrega['descripcionCliente'], entrega['inicio'], entrega['fin'],
+                delivery = Entrega.Entrega(entrega['id'], entrega['descripcion'], entrega['secuencia'], entrega['direccion'], entrega['idClient'], entrega['descripcionClient'], entrega['inicio'], entrega['fin'],
                                            entrega['tEspera'], entrega['km'], entrega['transito'], entrega['latitud'], entrega['longitud'], entrega['robustez'], entrega['cantidad'], entrega['volumen'], entrega['peso'])
                 lista_entregas.append(delivery)
 
