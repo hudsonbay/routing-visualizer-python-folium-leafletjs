@@ -1,7 +1,7 @@
 class Client:
 
     # Initializer / Instance Attributes
-    def __init__(self, id, descripcion, rfc):
+    def __init__(self, id, description, rfc):
         self.id = id
-        self.descripcion = descripcion
+        self.description = description
         self.rfc = rfc

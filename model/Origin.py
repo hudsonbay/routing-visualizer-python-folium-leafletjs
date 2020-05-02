@@ -1,11 +1,11 @@
 class Origin:
 
     # Initializer / Instance Attributes
-    def __init__(self, id, descripcion, direccion, latitud, longitud, desde, hasta):
+    def __init__(self, id, description, direccion, latitude, longitude, desde, hasta):
         self.id = id
-        self.descripcion = descripcion
+        self.description = description
         self.direccion = direccion
-        self.latitud = latitud
-        self.longitud = longitud
+        self.latitude = latitude
+        self.longitude = longitude
         self.desde = desde
         self.hasta = hasta

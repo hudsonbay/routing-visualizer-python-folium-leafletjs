@@ -1,9 +1,9 @@
 class Product:
 
     # Initializer / Instance Attributes
-    def __init__(self, id, descripcion, cantidad, volumen, peso, unidadMedida):
+    def __init__(self, id, description, cantidad, volumen, peso, unidadMedida):
         self.id = id
-        self.descripcion = descripcion
+        self.description = description
         self.cantidad = cantidad
         self.volumen = volumen
         self.peso = peso
