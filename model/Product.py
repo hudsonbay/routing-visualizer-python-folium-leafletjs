@@ -1,4 +1,4 @@
-class Producto:
+class Product:
 
     # Initializer / Instance Attributes
     def __init__(self, id, descripcion, cantidad, volumen, peso, unidadMedida):

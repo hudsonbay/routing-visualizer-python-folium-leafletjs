@@ -1,4 +1,4 @@
-class Origen:
+class Origin:
 
     # Initializer / Instance Attributes
     def __init__(self, id, descripcion, direccion, latitud, longitud, desde, hasta):

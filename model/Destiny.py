@@ -1,10 +1,10 @@
-class Destino:
+class Destiny:
 
-     # Initializer / Instance Attributes
-    def __init__(self, id, descripcion, cliente, direccion, latitud, longitud, desde, hasta, flexDesde, flexHasta):
+    # Initializer / Instance Attributes
+    def __init__(self, id, descripcion, client, direccion, latitud, longitud, desde, hasta, flexDesde, flexHasta):
         self.id = id
         self.descripcion = descripcion
-        self.cliente = cliente
+        self.client = client
         self.direccion = direccion
         self.latitud = latitud
         self.longitud = longitud

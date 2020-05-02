@@ -10,7 +10,7 @@ import json
 from pprint import pprint
 
 # methods to decode the json file
-#from json_decoding import get_routes, get_orders
+from json_decoding import get_routes, get_orders
 
 # for the color of the lines
 import randomcolor

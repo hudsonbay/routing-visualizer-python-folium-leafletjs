@@ -1,48 +1,48 @@
-from model import Client, Destino, Origen, Orden, Producto, Ruta, Parada, Entrega
+from model import Client, Destiny, Origin, Order, Product, Ruta, Parada, Entrega
 
 
-# recibe por lo general esto como parametro: json_data['input']['listaOrdenes']
+# recibe por lo general esto como parametro: json_data['input']['listaOrderes']
 def get_orders(json_data):
 
-    lista_ordenes = []
+    lista_orderes = []
 
-    for orden in json_data:
+    for order in json_data:
 
-        # destino
-        j = orden['destino']
+        # destiny
+        j = order['destiny']
 
-        # cliente
-        i = orden['destino']['cliente']
+        # client
+        i = order['destiny']['client']
 
-        # origen
-        k = orden['origen']
+        # origin
+        k = order['origin']
 
-        # lista de productos
-        lista_productos = []
+        # lista de products
+        lista_products = []
 
         # parsing clients into objects
-        cliente = Client.Client(i['id'], i['descripcion'], i['rfc'])
+        client = Client.Client(i['id'], i['descripcion'], i['rfc'])
 
         # parsing destinys into objects
-        destino = Destino.Destino(j['id'], j['descripcion'], cliente, j['direccion'],
+        destiny = Destiny.Destiny(j['id'], j['descripcion'], client, j['direccion'],
                                   j['latitud'], j['longitud'], j['desde'], j['hasta'], j['flexDesde'], j['flexHasta'])
 
         # parsing origins into objects
-        origen = Origen.Origen(k['id'], k['descripcion'], k['direccion'],
+        origin = Origin.Origin(k['id'], k['descripcion'], k['direccion'],
                                k['latitud'], k['longitud'], k['desde'], k['hasta'])
 
-        # parsing productos into objects
-        for p in orden['listaProductos']:
-            producto = Producto.Producto(p['id'], p['descripcion'], p['cantidad'],
-                                         p['volumen'], p['peso'], p['unidadMedida'])
-            lista_productos.append(producto)
+        # parsing products into objects
+        for p in order['listaProducts']:
+            product = Product.Product(p['id'], p['descripcion'], p['cantidad'],
+                                      p['volumen'], p['peso'], p['unidadMedida'])
+            lista_products.append(product)
 
-        # parsing ordenes into objects
-        sequence = Orden.Orden(orden['id'], orden['fecha'],
-                               orden['duracion'], destino, origen, lista_productos)
-        lista_ordenes.append(sequence)
+        # parsing orderes into objects
+        sequence = Order.Order(order['id'], order['fecha'],
+                               order['duracion'], destiny, origin, lista_products)
+        lista_orderes.append(sequence)
 
-    return lista_ordenes
+    return lista_orderes
 
 
 def get_routes(json_data):
@@ -70,12 +70,12 @@ def get_routes(json_data):
             lista_paradas.append(stop)
 
         # parsing origins into objects
-        k = ruta['origen']
-        origen = Origen.Origen(k['id'], k['descripcion'], k['direccion'],
+        k = ruta['origin']
+        origin = Origin.Origin(k['id'], k['descripcion'], k['direccion'],
                                k['latitud'], k['longitud'], k['desde'], k['hasta'])
 
         route = Ruta.Ruta(ruta['id'], ruta['inicio'], ruta['fin'], ruta['duracion'], ruta['hrsExtras'],
-                          ruta['nivelServicio'], ruta['vehiculo'], ruta['entregas'], lista_paradas, ruta['km'], origen, ruta['porTransito'], ruta['porAtencion'], ruta['porEspera'], ruta['porLlenado'], ruta['porLlenadoUnidades'], ruta['porLlenadoVolumen'], ruta['porLlenadoPeso'], ruta['cantidad'], ruta['volumen'], ruta['peso'])
+                          ruta['nivelServicio'], ruta['vehiculo'], ruta['entregas'], lista_paradas, ruta['km'], origin, ruta['porTransito'], ruta['porAtencion'], ruta['porEspera'], ruta['porLlenado'], ruta['porLlenadoUnidades'], ruta['porLlenadoVolumen'], ruta['porLlenadoPeso'], ruta['cantidad'], ruta['volumen'], ruta['peso'])
         lista_rutas.append(route)
 
     return lista_rutas
