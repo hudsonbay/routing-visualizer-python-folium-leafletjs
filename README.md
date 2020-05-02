@@ -14,6 +14,8 @@ Everything starts on an imaginary origin point.
 
 Here's how your project would look like:
 
+![Alt text](https://github.com/hudsonbay/routing-visualizer-python-folium-leafletjs/blob/master/screenshot/Screenshot_20200502_004734.png?raw=true "Application UI")
+
 ## Build Setup
 
 ```bash
